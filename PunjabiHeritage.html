@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punjabi Literature - ਪੰਜਾਬੀ ਸਾਹਿਤ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gurmukhi:wght@400;500;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e3a8a',
+                        secondary: '#8b5cf6',
+                        accent: '#f59e0b',
+                        light: '#f8fafc',
+                        dark: '#0f172a'
+                    },
+                    fontFamily: {
+                        gurmukhi: ['Noto Sans Gurmukhi', 'sans-serif'],
+                        shahmukhi: ['Noto Nastaliq Urdu', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .script-gurmukhi {
+            font-family: 'Noto Sans Gurmukhi', sans-serif;
+        }
+        .script-shahmukhi {
+            font-family: 'Noto Nastaliq Urdu', serif;
+        }
+        .text-shadow {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+        .hover-scale:hover {
+            transform: scale(1.02);
+        }
+        .bg-pattern {
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(255,255,255,0.1) 0%, transparent 20%),
+                radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 0%, transparent 20%);
+        }
+        .poem-line {
+            line-height: 2.2rem;
+        }
+        .poem-line:first-letter {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        .ornament {
+            position: relative;
+        }
+        .ornament::before {
+            content: "❦";
+            position: absolute;
+            left: 50%;
+            top: -20px;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            color: #8b5cf6;
+        }
+        .ornament::after {
+            content: "❦";
+            position: absolute;
+            left: 50%;
+            bottom: -20px;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            color: #8b5cf6;
+        }
+    </style>
+</head>
+<body class="bg-light text-dark font-sans">
+    <!-- Header -->
+    <header class="bg-primary text-white py-6 px-4 md:px-8 shadow-lg">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+            <div class="text-center md:text-left mb-4 md:mb-0">
+                <h1 class="text-3xl md:text-4xl font-bold script-gurmukhi">ਪੰਜਾਬੀ ਸਾਹਿਤ</h1>
+                <h2 class="text-xl md:text-2xl mt-1 script-shahmukhi text-accent">پنجابی ادب</h2>
+                <p class="mt-2 text-blue-200">Celebrating the Rich Literary Heritage of Punjab</p>
+            </div>
+            <nav class="flex flex-wrap justify-center gap-4 md:gap-6">
+                <a href="#home" class="text-white hover:text-accent transition">Home</a>
+                <a href="#authors" class="text-white hover:text-accent transition">Authors</a>
+                <a href="#poetry" class="text-white hover:text-accent transition">Poetry</a>
+                <a href="#stories" class="text-white hover:text-accent transition">Stories</a>
+                <a href="#history" class="text-white hover:text-accent transition">History</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="py-16 md:py-24 bg-gradient-to-br from-primary to-indigo-900 text-white">
+        <div class="container mx-auto px-4 md:px-8 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 script-gurmukhi">ਪੰਜਾਬੀ ਸਾਹਿਤ</h1>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 script-shahmukhi">پنجابی ادب</h2>
+                <p class="text-xl md:text-2xl mb-8">Exploring the timeless beauty of Punjabi literature through centuries</p>
+                <div class="flex justify-center gap-4">
+                    <a href="#poetry" class="bg-accent hover:bg-yellow-500 text-dark font-bold py-3 px-6 rounded-full transition transform hover:scale-105">
+                        Explore Poetry
+                    </a>
+                    <a href="#authors" class="bg-secondary hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-full transition transform hover:scale-105">
+                        Meet Authors
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="max-w-4xl mx-auto text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">The Soul of Punjab</h2>
+                <div class="w-24 h-1 bg-accent mx-auto mb-8"></div>
+                <p class="text-lg text-gray-700 mb-6">
+                    Punjabi literature is a treasure trove of human emotions, spiritual wisdom, and cultural heritage. 
+                    Spanning centuries, it reflects the soul of Punjab through poetry, prose, and folk traditions.
+                </p>
+                <p class="text-lg text-gray-700">
+                    From the mystical verses of Baba Farid to the revolutionary writings of Waris Shah, 
+                    Punjabi literature captures the essence of life, love, and spirituality in its purest form.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
+                <div class="bg-blue-50 p-8 rounded-xl shadow-md hover-scale">
+                    <h3 class="text-2xl font-bold text-primary mb-4 script-gurmukhi">ਗੁਰਮੁਖੀ</h3>
+                    <p class="text-gray-700 mb-4">
+                        Gurmukhi script is the primary script for writing Punjabi in India. 
+                        It was developed by Guru Angad, the second Sikh Guru, and is used in the Guru Granth Sahib.
+                    </p>
+                    <div class="text-2xl script-gurmukhi text-primary">
+                        ਵਾਹਿਗੁਰੂ ਜੀ ਕਾ ਖਾਲਸਾ
+                    </div>
+                </div>
+                
+                <div class="bg-purple-50 p-8 rounded-xl shadow-md hover-scale">
+                    <h3 class="text-2xl font-bold text-secondary mb-4 script-shahmukhi">شاہمُکھی</h3>
+                    <p class="text-gray-700 mb-4">
+                        Shahmukhi script is used for writing Punjabi in Pakistan. 
+                        It is based on the Perso-Arabic script and has been adapted to represent Punjabi sounds.
+                    </p>
+                    <div class="text-2xl script-shahmukhi text-secondary">
+                        واهِگُرُو جی کا خالسا
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Authors Section -->
+    <section id="authors" class="py-16 bg-light">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Master Authors</h2>
+                <div class="w-24 h-1 bg-accent mx-auto mb-8"></div>
+                <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+                    Celebrating the literary giants who shaped Punjabi literature through their timeless works.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Author 1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-scale">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
+                            <div class="ml-4">
+                                <h3 class="text-xl font-bold text-primary">Baba Farid</h3>
+                                <p class="text-gray-600">12th Century Poet</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            Considered one of the earliest poets of Punjabi literature, his verses are included in the Guru Granth Sahib.
+                        </p>
+                        <div class="script-gurmukhi text-primary font-medium">
+                            ਹੇ ਮੇਰੇ ਮਾਲਕ ਨੂੰ ਕੋਈ ਵਿਅਕਤੀ ਨਹੀਂ ਲੱਭ ਸਕਦਾ
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Author 2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-scale">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
+                            <div class="ml-4">
+                                <h3 class="text-xl font-bold text-primary">Waris Shah</h3>
+                                <p class="text-gray-600">18th Century Poet</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            Famous for his epic poem "Heer Ranjha", considered one of the greatest works of Punjabi literature.
+                        </p>
+                        <div class="script-gurmukhi text-primary font-medium">
+                            ਹੀਰ ਰਾਂਝਾ ਦੀ ਕਹਾਣੀ ਦਾ ਲੇਖਕ
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Author 3 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-scale">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
+                            <div class="ml-4">
+                                <h3 class="text-xl font-bold text-primary">Bulleh Shah</h3>
+                                <p class="text-gray-600">17th Century Poet</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            A revolutionary poet whose works explore themes of love, spirituality, and social criticism.
+                        </p>
+                        <div class="script-gurmukhi text-primary font-medium">
+                            ਬੁੱਲੇ ਸ਼ਾਹ ਦੀਆਂ ਕਵਿ�ਾਵਾਂ
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Poetry Section -->
+    <section id="poetry" class="py-16 bg-gradient-to-br from-blue-50 to-indigo-50">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Timeless Poetry</h2>
+                <div class="w-24 h-1 bg-accent mx-auto mb-8"></div>
+                <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+                    Excerpts from the greatest works of Punjabi poetry in both scripts.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Gurmukhi Poetry -->
+                <div class="bg-white rounded-xl shadow-lg p-8 hover-scale">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-primary w-12 h-12 rounded-full flex items-center justify-center text-white">
+                            <i class="fas fa-feather-alt"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-primary ml-4 script-gurmukhi">ਪੰਜਾਬੀ ਕਵਿਤਾ</h3>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="ornament py-4">
+                            <p class="text-gray-700 poem-line script-gurmukhi text-lg">
+                                ਹੇ ਮੇਰੇ ਮਾਲਕ ਨੂੰ ਕੋਈ ਵਿਅਕਤੀ ਨਹੀਂ ਲੱਭ ਸਕਦਾ
+                            </p>
+                            <p class="text-gray-600 mt-2">- Baba Farid</p>
+                        </div>
+                        
+                        <div class="ornament py-4">
+                            <p class="text-gray-700 poem-line script-gurmukhi text-lg">
+                                ਰਾਂਝਾ ਰਾਂਝਾ ਕਰੇ ਕੌਨ ਜੁਗਤਿ ਦਾ
+                            </p>
+                            <p class="text-gray-700 poem-line script-gurmukhi text-lg">
+                                ਇਹੀ ਤੋਂ ਲਈ ਸੀ ਸਾਡੀ ਜੁਗਤਿ ਦਾ
+                            </p>
+                            <p class="text-gray-600 mt-2">- Waris Shah, Heer Ranjha</p>
+                        </div>
+                        
+                        <div class="ornament py-4">
+                            <p class="text-gray-700 poem-line script-gurmukhi text-lg">
+                                ਦੋਲੇ ਦੋਲੇ ਦੋਲਾਂ ਦੋਲੀਆਂ ਦੇ
+                            </p>
+                            <p class="text-gray-700 poem-line script-gurmukhi text-lg">
+                                ਦੋਲੇ ਦੋਲੇ ਦੋਲਾਂ ਦੋਲੀਆਂ ਦੇ
+                            </p>
+                            <p class="text-gray-600 mt-2">- Traditional Folk Poetry</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Shahmukhi Poetry -->
+                <div class="bg-white rounded-xl shadow-lg p-8 hover-scale">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-secondary w-12 h-12 rounded-full flex items-center justify-center text-white">
+                            <i class="fas fa-pen"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-secondary ml-4 script-shahmukhi">پنجابی کوئیت</h3>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="ornament py-4">
+                            <p class="text-gray-700 poem-line script-shahmukhi text-2xl">
+                                ہیکوں میرا مالک کوئی بندہ کیویں لبھ سکدا
+                            </p>
+                            <p class="text-gray-600 mt-2">- بابا فرید</p>
+                        </div>
+                        
+                        <div class="ornament py-4">
+                            <p class="text-gray-700 poem-line script-shahmukhi text-2xl">
+                                ران٘ژا ران٘ژا کرے کون جگت دا
+                            </p>
+                            <p class="text-gray-700 poem-line script-shahmukhi text-2xl">
+                                ایہی تون لی سی سادی جگت دا
+                            </p>
+                            <p class="text-gray-600 mt-2">- وارث شاہ، ہیر رنجھا</p>
+                        </div>
+                        
+                        <div class="ornament py-4">
+                            <p class="text-gray-700 poem-line script-shahmukhi text-2xl">
+                                دولے دولے دولان دولیاں دے
+                            </p>
+                            <p class="text-gray-700 poem-line script-shahmukhi text-2xl">
+                                دولے دولے دولان دولیاں دے
+                            </p>
+                            <p class="text-gray-600 mt-2">- روایتی لوک کوئیت</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stories Section -->
+    <section id="stories" class="py-16 bg-white">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Epic Stories</h2>
+                <div class="w-24 h-1 bg-accent mx-auto mb-8"></div>
+                <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+                    Timeless tales that capture the essence of Punjabi culture and values.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="bg-blue-50 rounded-xl p-8 shadow-md hover-scale">
+                    <h3 class="text-2xl font-bold text-primary mb-4 script-gurmukhi">ਹੀਰ ਰਾਂਝਾ</h3>
+                    <p class="text-gray-700 mb-4">
+                        The tragic love story of Heer and Ranjha is one of the most celebrated works in Punjabi literature. 
+                        Written by Waris Shah in the 18th century, it's considered one of the greatest love stories ever told.
+                    </p>
+                    <div class="script-gurmukhi text-primary font-medium">
+                        ਹੀਰ ਰਾਂਝਾ ਦੀ ਕਹਾਣੀ ਦਾ ਲੇਖਕ
+                    </div>
+                </div>
+                
+                <div class="bg-purple-50 rounded-xl p-8 shadow-md hover-scale">
+                    <h3 class="text-2xl font-bold text-secondary mb-4 script-shahmukhi">ہیر رنجھا</h3>
+                    <p class="text-gray-700 mb-4">
+                        ہیر رنجھا کی کہانی پنجابی ادب کی سب سے زیادہ مشہور محبت نامہ ہے۔ 
+                        اس کا تالیف وارث شاہ نے کیا تھا، جو 18 ویں صدی میں رہتے تھے۔
+                    </p>
+                    <div class="script-shahmukhi text-secondary font-medium">
+                        وارث شاہ کی تصنیف
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 bg-gradient-to-r from-primary to-indigo-800 rounded-2xl p-8 text-white">
+                <div class="max-w-3xl mx-auto text-center">
+                    <h3 class="text-2xl font-bold mb-4">The Cultural Significance</h3>
+                    <p class="text-lg mb-6">
+                        These stories are not just entertainment but a reflection of Punjabi values, traditions, and social structures. 
+                        They preserve the cultural heritage and teach moral lessons through compelling narratives.
+                    </p>
+                    <div class="flex justify-center">
+                        <div class="bg-accent text-dark font-bold py-2 px-6 rounded-full inline-block">
+                            Preserving Heritage
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- History Section -->
+    <section id="history" class="py-16 bg-gradient-to-br from-blue-50 to-indigo-50">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Historical Journey</h2>
+                <div class="w-24 h-1 bg-accent mx-auto mb-8"></div>
+                <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+                    Tracing the evolution of Punjabi literature through the centuries.
+                </p>
+            </div>
+            
+            <div class="relative">
+                <!-- Timeline -->
+                <div class="ml-8 md:ml-32 py-4">
+                    <!-- Event 1 -->
+                    <div class="mb-12">
+                        <div class="flex items-center mb-1">
+                            <div class="absolute left-0 w-6 h-6 rounded-full bg-primary z-10"></div>
+                            <div class="flex-1 bg-white rounded-lg shadow-md p-6 ml-10">
+                                <h3 class="text-xl font-bold text-primary mb-2">12th Century</h3>
+                                <p class="text-gray-700">
+                                    The earliest Punjabi literature emerges with the works of Sufi poets like Baba Farid, 
+                                    whose verses are included in the Guru Granth Sahib.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Event 2 -->
+                    <div class="mb-12">
+                        <div class="flex items-center mb-1">
+                            <div class="absolute left-0 w-6 h-6 rounded-full bg-primary z-10"></div>
+                            <div class="flex-1 bg-white rounded-lg shadow-md p-6 ml-10">
+                                <h3 class="text-xl font-bold text-primary mb-2">15th Century</h3>
+                                <p class="text-gray-700">
+                                    Guru Nanak and other Sikh Gurus contribute significantly to Punjabi literature. 
+                                    The Guru Granth Sahib becomes a cornerstone of Punjabi literary tradition.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Event 3 -->
+                    <div class="mb-12">
+                        <div class="flex items-center mb-1">
+                            <div class="absolute left-0 w-6 h-6 rounded-full bg-primary z-10"></div>
+                            <div class="flex-1 bg-white rounded-lg shadow-md p-6 ml-10">
+                                <h3 class="text-xl font-bold text-primary mb-2">18th Century</h3>
+                                <p class="text-gray-700">
+                                    Waris Shah's "Heer Ranjha" becomes a masterpiece of Punjabi poetry. 
+                                    This period sees the flourishing of Sufi poetry and folk traditions.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Event 4 -->
+                    <div class="mb-12">
+                        <div class="flex items-center mb-1">
+                            <div class="absolute left-0 w-6 h-6 rounded-full bg-primary z-10"></div>
+                            <div class="flex-1 bg-white rounded-lg shadow-md p-6 ml-10">
+                                <h3 class="text-xl font-bold text-primary mb-2">19th Century</h3>
+                                <p class="text-gray-700">
+                                    Modern Punjabi literature begins with writers like Nanak Singh and Amrita Pritam. 
+                                    The period sees the development of modern prose and poetry.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Event 5 -->
+                    <div class="mb-12">
+                        <div class="flex items-center mb-1">
+                            <div class="absolute left-0 w-6 h-6 rounded-full bg-primary z-10"></div>
+                            <div class="flex-1 bg-white rounded-lg shadow-md p-6 ml-10">
+                                <h3 class="text-xl font-bold text-primary mb-2">20th Century Onwards</h3>
+                                <p class="text-gray-700">
+                                    Contemporary Punjabi literature continues to evolve with writers like Shiv Kumar Batalvi 
+                                    and Surjit Patar, exploring modern themes while preserving traditional values.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 script-gurmukhi">ਪੰਜਾਬੀ ਸਾਹਿਤ</h3>
+                    <p class="text-blue-200 mb-4">
+                        Preserving and celebrating the rich heritage of Punjabi literature for future generations.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-accent"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-white hover:text-accent"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white hover:text-accent"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-blue-200 hover:text-accent">Home</a></li>
+                        <li><a href="#authors" class="text-blue-200 hover:text-accent">Authors</a></li>
+                        <li><a href="#poetry" class="text-blue-200 hover:text-accent">Poetry</a></li>
+                        <li><a href="#stories" class="text-blue-200 hover:text-accent">Stories</a></li>
+                        <li><a href="#history" class="text-blue-200 hover:text-accent">History</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Contact Us</h4>
+                    <p class="text-blue-200 mb-2">Email: info@punjabilit.com</p>
+                    <p class="text-blue-200 mb-2">Phone: +91 123 456 7890</p>
+                    <p class="text-blue-200">Address: Punjab, India</p>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-800 mt-8 pt-8 text-center text-blue-300">
+                <p>© 2023 Punjabi Literature Showcase. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
