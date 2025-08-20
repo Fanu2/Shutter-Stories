@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexusAI | Future of Machine Learning</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#8b5cf6',
+                        dark: '#0f172a',
+                        light: '#f8fafc'
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'gradient': 'gradient 8s ease infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        gradient: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .gradient-text {
+                background: linear-gradient(90deg, #6366f1, #8b5cf6, #ec4899);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+            .gradient-bg {
+                background: linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899);
+                background-size: 200% 200%;
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+                transform: translateY(0);
+            }
+            .card-hover:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            }
+            .tech-icon {
+                transition: all 0.3s ease;
+            }
+            .tech-icon:hover {
+                transform: scale(1.2);
+                color: #8b5cf6;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-900 to-gray-800 text-light font-sans">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-gray-900/80 backdrop-blur-sm py-4 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 rounded-lg gradient-bg flex items-center justify-center">
+                    <i class="fas fa-brain text-white text-xl"></i>
+                </div>
+                <span class="text-2xl font-bold">Nexus<span class="gradient-text">AI</span></span>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#" class="hover:text-primary transition">Home</a>
+                <a href="#features" class="hover:text-primary transition">Features</a>
+                <a href="#demo" class="hover:text-primary transition">Demo</a>
+                <a href="#tech" class="hover:text-primary transition">Technology</a>
+                <a href="#contact" class="hover:text-primary transition">Contact</a>
+            </div>
+            <div>
+                <button class="px-6 py-2 rounded-lg gradient-bg hover:opacity-90 transition font-medium">Get Started</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <h1 class="text-5xl md:text-6xl font-bold leading-tight">
+                    The Future of <span class="gradient-text">Machine Learning</span> is Here
+                </h1>
+                <p class="text-xl text-gray-300 max-w-2xl">
+                    NexusAI transforms Python-powered AI into enterprise-ready solutions. 
+                    Our platform combines cutting-edge algorithms with intuitive tools for developers and businesses.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                    <button class="px-8 py-4 rounded-xl gradient-bg text-lg font-semibold hover:opacity-90 transition">
+                        Start Free Trial
+                    </button>
+                    <button class="px-8 py-4 rounded-xl bg-gray-800 text-lg font-semibold hover:bg-gray-700 transition flex items-center justify-center">
+                        <i class="fas fa-play-circle mr-2 text-primary"></i> Watch Demo
+                    </button>
+                </div>
+                <div class="flex items-center pt-6">
+                    <div class="flex -space-x-3">
+                        <img class="w-10 h-10 rounded-full border-2 border-gray-800" src="https://randomuser.me/api/portraits/men/32.jpg" alt="User">
+                        <img class="w-10 h-10 rounded-full border-2 border-gray-800" src="https://randomuser.me/api/portraits/women/44.jpg" alt="User">
+                        <img class="w-10 h-10 rounded-full border-2 border-gray-800" src="https://randomuser.me/api/portraits/men/56.jpg" alt="User">
+                        <img class="w-10 h-10 rounded-full border-2 border-gray-800" src="https://randomuser.me/api/portraits/women/23.jpg" alt="User">
+                    </div>
+                    <p class="ml-4 text-gray-400">
+                        Trusted by 500+ developers and data scientists
+                    </p>
+                </div>
+            </div>
+            <div class="relative flex justify-center">
+                <div class="relative w-full max-w-lg">
+                    <div class="absolute top-10 -left-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse-slow"></div>
+                    <div class="absolute top-0 -right-10 w-72 h-72 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse-slow animation-delay-2000"></div>
+                    <div class="relative rounded-2xl bg-gray-800/50 backdrop-blur-sm border border-gray-700 p-8">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <div class="text-sm text-gray-400">Model Performance</div>
+                                <div class="text-xl font-bold mt-1">Neural Network v3.2</div>
+                            </div>
+                            <div class="px-3 py-1 bg-green-900/30 text-green-400 rounded-full text-sm">Active</div>
+                        </div>
+                        <div class="mt-6 h-64 relative">
+                            <div class="absolute inset-0 flex items-end">
+                                <div class="w-full h-48 bg-gradient-to-t from-primary/10 to-primary/5 rounded-t-lg"></div>
+                            </div>
+                            <div class="absolute inset-0 flex items-end space-x-2 px-2">
+                                <div class="w-8 h-32 bg-gradient-to-t from-primary to-secondary rounded-t"></div>
+                                <div class="w-8 h-40 bg-gradient-to-t from-primary to-secondary rounded-t"></div>
+                                <div class="w-8 h-48 bg-gradient-to-t from-primary to-secondary rounded-t"></div>
+                                <div class="w-8 h-36 bg-gradient-to-t from-primary to-secondary rounded-t"></div>
+                                <div class="w-8 h-44 bg-gradient-to-t from-primary to-secondary rounded-t"></div>
+                                <div class="w-8 h-38 bg-gradient-to-t from-primary to-secondary rounded-t"></div>
+                                <div class="w-8 h-42 bg-gradient-to-t from-primary to-secondary rounded-t"></div>
+                            </div>
+                            <div class="absolute top-4 right-4 flex space-x-2">
+                                <div class="w-3 h-3 rounded-full bg-green-500 animate-pulse"></div>
+                                <div class="text-sm text-gray-400">Live</div>
+                            </div>
+                        </div>
+                        <div class="mt-6 grid grid-cols-3 gap-4 text-center">
+                            <div class="bg-gray-900/50 p-3 rounded-lg">
+                                <div class="text-2xl font-bold">98.7%</div>
+                                <div class="text-sm text-gray-400">Accuracy</div>
+                            </div>
+                            <div class="bg-gray-900/50 p-3 rounded-lg">
+                                <div class="text-2xl font-bold">0.2s</div>
+                                <div class="text-sm text-gray-400">Response</div>
+                            </div>
+                            <div class="bg-gray-900/50 p-3 rounded-lg">
+                                <div class="text-2xl font-bold">10x</div>
+                                <div class="text-sm text-gray-400">Faster</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-4xl font-bold mb-4">Transform Your Data Into Intelligence</h2>
+                <p class="text-xl text-gray-400">
+                    Our platform simplifies complex machine learning workflows with Python-based tools and intuitive interfaces.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 card-hover border border-gray-700">
+                    <div class="w-14 h-14 rounded-lg gradient-bg flex items-center justify-center mb-6">
+                        <i class="fas fa-code text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Python Integration</h3>
+                    <p class="text-gray-400 mb-6">
+                        Seamless integration with Python libraries like NumPy, Pandas, and Scikit-learn. Build, train, and deploy models directly from your preferred Python environment.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Native Python SDK</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Jupyter Notebook support</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Custom model deployment</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 card-hover border border-gray-700">
+                    <div class="w-14 h-14 rounded-lg gradient-bg flex items-center justify-center mb-6">
+                        <i class="fas fa-robot text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">AI Model Studio</h3>
+                    <p class="text-gray-400 mb-6">
+                        Visual interface for creating, training, and testing machine learning models. No coding required for basic implementations.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Drag-and-drop model building</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Real-time performance monitoring</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>AutoML capabilities</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 card-hover border border-gray-700">
+                    <div class="w-14 h-14 rounded-lg gradient-bg flex items-center justify-center mb-6">
+                        <i class="fas fa-cloud text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Enterprise Deployment</h3>
+                    <p class="text-gray-400 mb-6">
+                        Deploy your models at scale with our secure, scalable cloud infrastructure. Supports private clouds and hybrid deployments.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Auto-scaling clusters</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Enterprise security features</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>99.99% uptime SLA</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Demo -->
+    <section id="demo" class="py-20 px-6 bg-gray-800/30">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-4xl font-bold mb-4">Interactive AI Playground</h2>
+                <p class="text-xl text-gray-400">
+                    Experience our machine learning capabilities with this real-time demo.
+                </p>
+            </div>
+            <div class="bg-gray-800/50 backdrop-blur-sm rounded-3xl border border-gray-700 overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 p-8">
+                        <h3 class="text-2xl font-bold mb-6">Image Classification</h3>
+                        <p class="text-gray-400 mb-6">
+                            Upload an image and see how our AI model classifies it. Our convolutional neural network has been trained on millions of images for high accuracy.
+                        </p>
+                        <div class="mb-6">
+                            <label class="block text-gray-400 mb-2">Upload Image</label>
+                            <div class="border-2 border-dashed border-gray-600 rounded-xl p-8 text-center cursor-pointer hover:border-primary transition">
+                                <i class="fas fa-cloud-upload-alt text-4xl text-gray-500 mb-3"></i>
+                                <p class="text-gray-500">Click or drag to upload</p>
+                                <p class="text-sm text-gray-600 mt-2">Supports JPG, PNG up to 5MB</p>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-3 gap-4 mb-6">
+                            <div class="bg-gray-700/50 rounded-lg p-4 cursor-pointer hover:bg-gray-700 transition border border-gray-600">
+                                <img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" alt="Category" class="rounded-lg mb-2">
+                                <div class="text-center text-sm">Cat</div>
+                            </div>
+                            <div class="bg-gray-700/50 rounded-lg p-4 cursor-pointer hover:bg-gray-700 transition border border-gray-600">
+                                <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" alt="Category" class="rounded-lg mb-2">
+                                <div class="text-center text-sm">Dog</div>
+                            </div>
+                            <div class="bg-gray-700/50 rounded-lg p-4 cursor-pointer hover:bg-gray-700 transition border border-gray-600">
+                                <img src="https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" alt="Category" class="rounded-lg mb-2">
+                                <div class="text-center text-sm">Car</div>
+                            </div>
+                        </div>
+                        <button class="w-full py-3 rounded-lg gradient-bg font-semibold hover:opacity-90 transition">
+                            Process Image
+                        </button>
+                    </div>
+                    <div class="md:w-1/2 bg-gray-900/30 p-8">
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="text-2xl font-bold">Results</h3>
+                            <div class="px-3 py-1 bg-green-900/30 text-green-400 rounded-full text-sm">Live</div>
+                        </div>
+                        <div class="space-y-6">
+                            <div class="p-4 bg-gray-800/50 rounded-xl">
+                                <div class="flex justify-between">
+                                    <span>Classification</span>
+                                    <span class="font-bold">Domestic Cat</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2 mt-2">
+                                    <div class="bg-gradient-to-r from-primary to-secondary h-2 rounded-full" style="width: 92%"></div>
+                                </div>
+                            </div>
+                            <div class="p-4 bg-gray-800/50 rounded-xl">
+                                <div class="flex justify-between">
+                                    <span>Confidence</span>
+                                    <span class="font-bold">92.3%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2 mt-2">
+                                    <div class="bg-gradient-to-r from-primary to-secondary h-2 rounded-full" style="width: 92%"></div>
+                                </div>
+                            </div>
+                            <div class="p-4 bg-gray-800/50 rounded-xl">
+                                <div class="flex justify-between">
+                                    <span>Processing Time</span>
+                                    <span class="font-bold">1.2s</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2 mt-2">
+                                    <div class="bg-gradient-to-r from-primary to-secondary h-2 rounded-full" style="width: 100%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <h4 class="font-bold mb-4">Model Information</h4>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-gray-800/50 p-4 rounded-xl">
+                                    <div class="text-gray-400 text-sm">Architecture</div>
+                                    <div class="font-bold">ResNet-50</div>
+                                </div>
+                                <div class="bg-gray-800/50 p-4 rounded-xl">
+                                    <div class="text-gray-400 text-sm">Training Data</div>
+                                    <div class="font-bold">10M+ images</div>
+                                </div>
+                                <div class="bg-gray-800/50 p-4 rounded-xl">
+                                    <div class="text-gray-400 text-sm">Parameters</div>
+                                    <div class="font-bold">25.6M</div>
+                                </div>
+                                <div class="bg-gray-800/50 p-4 rounded-xl">
+                                    <div class="text-gray-400 text-sm">Accuracy</div>
+                                    <div class="font-bold">94.2%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section id="tech" class="py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-4xl font-bold mb-4">Built With Modern Technology</h2>
+                <p class="text-xl text-gray-400">
+                    Our platform leverages the most advanced technologies in machine learning and cloud computing.
+                </p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700 text-center card-hover flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-xl bg-gray-900 flex items-center justify-center mb-6 tech-icon">
+                        <i class="fab fa-python text-3xl text-yellow-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Python</h3>
+                    <p class="text-gray-400 text-sm">Native support for Python 3.8+</p>
+                </div>
+                <div class="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700 text-center card-hover flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-xl bg-gray-900 flex items-center justify-center mb-6 tech-icon">
+                        <i class="fab fa-docker text-3xl text-blue-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Docker</h3>
+                    <p class="text-gray-400 text-sm">Containerized deployments</p>
+                </div>
+                <div class="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700 text-center card-hover flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-xl bg-gray-900 flex items-center justify-center mb-6 tech-icon">
+                        <i class="fab fa-aws text-3xl text-yellow-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">AWS</h3>
+                    <p class="text-gray-400 text-sm">Scalable cloud infrastructure</p>
+                </div>
+                <div class="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700 text-center card-hover flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-xl bg-gray-900 flex items-center justify-center mb-6 tech-icon">
+                        <i class="fas fa-microchip text-3xl text-purple-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">TensorFlow</h3>
+                    <p class="text-gray-400 text-sm">Machine learning framework</p>
+                </div>
+                <div class="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700 text-center card-hover flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-xl bg-gray-900 flex items-center justify-center mb-6 tech-icon">
+                        <i class="fas fa-project-diagram text-3xl text-green-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">PyTorch</h3>
+                    <p class="text-gray-400 text-sm">Deep learning library</p>
+                </div>
+                <div class="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700 text-center card-hover flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-xl bg-gray-900 flex items-center justify-center mb-6 tech-icon">
+                        <i class="fas fa-server text-3xl text-blue-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Kubernetes</h3>
+                    <p class="text-gray-400 text-sm">Orchestration platform</p>
+                </div>
+                <div class="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700 text-center card-hover flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-xl bg-gray-900 flex items-center justify-center mb-6 tech-icon">
+                        <i class="fas fa-database text-3xl text-orange-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">MongoDB</h3>
+                    <p class="text-gray-400 text-sm">Flexible database</p>
+                </div>
+                <div class="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700 text-center card-hover flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-xl bg-gray-900 flex items-center justify-center mb-6 tech-icon">
+                        <i class="fas fa-chart-line text-3xl text-green-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Scikit-learn</h3>
+                    <p class="text-gray-400 text-sm">Machine learning library</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 px-6 bg-gray-800/30">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-4xl font-bold mb-4">Trusted by Leading Innovators</h2>
+                <p class="text-xl text-gray-400">
+                    Forward-thinking companies are building the future with our AI platform.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center text-white font-bold">
+                            TD
+                        </div>
+                        <div class="ml-4">
+                            <div class="font-bold">Alex Johnson</div>
+                            <div class="text-gray-400 text-sm">CTO, TechData Inc.</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">
+                        "NexusAI has transformed how we approach machine learning projects. The Python integration has cut our development time in half while improving model accuracy."
+                    </p>
+                    <div class="flex mt-6 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center text-white font-bold">
+                            FS
+                        </div>
+                        <div class="ml-4">
+                            <div class="font-bold">Sarah Chen</div>
+                            <div class="text-gray-400 text-sm">Lead Data Scientist, FutureScale</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">
+                        "The model deployment capabilities are impressive. We're processing millions of predictions daily with 99.9% uptime. The API is incredibly well-documented."
+                    </p>
+                    <div class="flex mt-6 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center text-white font-bold">
+                            NW
+                        </div>
+                        <div class="ml-4">
+                            <div class="font-bold">Michael Rodriguez</div>
+                            <div class="text-gray-400 text-sm">AI Researcher, NeuroWorks</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">
+                        "We've integrated NexusAI into our research pipeline and it's been a game-changer. The visual model building interface helps our non-technical team members contribute effectively."
+                    </p>
+                    <div class="flex mt-6 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 px-6">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-6">Ready to Transform Your Business?</h2>
+            <p class="text-xl text-gray-400 max-w-2xl mx-auto mb-10">
+                Join thousands of developers and data scientists building the future of AI with NexusAI.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <button class="px-8 py-4 rounded-xl gradient-bg text-lg font-semibold hover:opacity-90 transition">
+                    Start Free Trial
+                </button>
+                <button class="px-8 py-4 rounded-xl bg-gray-800 text-lg font-semibold hover:bg-gray-700 transition">
+                    Schedule a Demo
+                </button>
+            </div>
+            <p class="text-gray-500 mt-6">
+                No credit card required. 14-day free trial.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 pt-16 pb-8 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-8 mb-12">
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="w-10 h-10 rounded-lg gradient-bg flex items-center justify-center">
+                            <i class="fas fa-brain text-white text-xl"></i>
+                        </div>
+                        <span class="text-2xl font-bold">Nexus<span class="gradient-text">AI</span></span>
+                    </div>
+                    <p class="text-gray-400 max-w-md">
+                        Empowering developers and businesses with cutting-edge AI technology powered by Python and machine learning.
+                    </p>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Product</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Features</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Solutions</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Pricing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Documentation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Releases</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Company</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">About</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Press</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Legal</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Privacy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Terms</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Security</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Compliance</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-800 text-center text-gray-500">
+                <p>© 2023 NexusAI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Button -->
+    <div class="fixed bottom-8 right-8">
+        <button class="w-14 h-14 rounded-full gradient-bg flex items-center justify-center shadow-lg hover:opacity-90 transition animate-float">
+            <i class="fas fa-comments text-white"></i>
+        </button>
+    </div>
+
+    <script>
+        // Simple animation for interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add hover effects to cards
+            const cards = document.querySelectorAll('.card-hover');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px)';
+                    this.style.boxShadow = '0 25px 50px -12px rgba(0, 0, 0, 0.25)';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = 'none';
+                });
+            });
+            
+            // Simulate loading on demo button click
+            const demoButton = document.querySelector('#demo button');
+            if (demoButton) {
+                demoButton.addEventListener('click', function() {
+                    this.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Processing...';
+                    setTimeout(() => {
+                        this.innerHTML = 'Process Complete';
+                        this.classList.add('bg-green-600');
+                        setTimeout(() => {
+                            this.innerHTML = 'Process Image';
+                            this.classList.remove('bg-green-600');
+                        }, 2000);
+                    }, 1500);
+                });
+            }
+            
+            // Handle scroll animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-float');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            document.querySelectorAll('.card-hover').forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
